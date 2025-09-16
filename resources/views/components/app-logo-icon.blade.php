@@ -1,0 +1,1 @@
+<img src="{{ asset('img/logo_diadica.png') }}" alt="Logo" >
