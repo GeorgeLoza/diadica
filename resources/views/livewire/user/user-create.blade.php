@@ -1,7 +1,7 @@
 <div>
     <div class="w-full flex justify-end mb-4">
         <flux:modal.trigger name="crear-usuario">
-            <flux:button size="sm" icon="plus" variant="primary"  color="green">Crear usuario</flux:button>
+            <flux:button size="sm" icon="plus" variant="primary" color="green">Crear usuario</flux:button>
         </flux:modal.trigger>
     </div>
     <flux:modal name="crear-usuario" variant="flyout">
@@ -13,7 +13,12 @@
             <form wire:submit.prevent="createUser" class="space-y-4">
                 <flux:input wire:model="name" label="Name" placeholder="Tu nombre" />
                 <flux:input wire:model="email" label="Email" placeholder="Tu email" />
-                <flux:input wire:model="rol" label="Rol" placeholder="Tu rol" />
+                <flux:select wire:model="rol" label="Rol" placeholder="Seleccione un rol">
+                    <flux:select.option value="">Seleccione un rol</flux:select.option>
+                    <flux:select.option value="admin">Administrador</flux:select.option>
+                    <flux:select.option value="cliente">Cliente</flux:select.option>
+                    <flux:select.option value="trabajador">Trabajador</flux:select.option>
+                </flux:select>
                 <flux:input wire:model="estado" label="Estado" placeholder="Estado del usuario" />
                 <flux:input wire:model="password" label="Password" placeholder="Tu contraseña" type="password" />
                 <flux:input wire:model="empresa" label="Empresa" placeholder="Tu empresa" />

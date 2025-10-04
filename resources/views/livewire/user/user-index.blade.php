@@ -11,13 +11,14 @@
     <livewire:user.userContacto />
     <livewire:user.userUbicacion />
     {{-- Modal para confirmar eliminación --}}
-
+    @include('partials.toast')
 
     {{-- Filtro rápido global --}}
     <div class="mb-2 flex gap-2 max-w-md">
         <flux:input size="sm" icon="magnifying-glass" wire:model.live.live="search"
             placeholder="Buscar en todo..." />
     </div>
+    
     {{-- Tabla de usuarios --}}
     <div class="mt-2 overflow-x-auto">
         <table class="min-w-full divide-y divide-neutral-200 dark:divide-neutral-700 text-xs text-left">

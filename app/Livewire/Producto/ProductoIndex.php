@@ -72,11 +72,13 @@ class ProductoIndex extends Component
     {
         $this->dispatch('productoEdit',  $id);
     }
+
     public function delete($id)
     {
         $this->productoId = $id;
         Flux::modal('delete-producto')->show();
     }
+
     public function deleteProduct()
     {
         try {
@@ -90,4 +92,5 @@ class ProductoIndex extends Component
             session()->flash('error', 'Error al eliminar el producto: ' . $th->getMessage());
         }
     }
+    
 }

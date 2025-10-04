@@ -15,10 +15,14 @@
                 <flux:navlist.group :heading="__('Menu')" class="grid">
                     <flux:navlist.item icon="home" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>{{ __('Dashboard') }}</flux:navlist.item>
                     <flux:navlist.item icon="user" :href="route('user.index')" :current="request()->routeIs('user.index')" wire:navigate>{{ __('User') }}</flux:navlist.item>
-                    <flux:navlist.item icon="user" :href="route('cliente.index')" :current="request()->routeIs('cliente.index')" wire:navigate>{{ __('Cliente') }}</flux:navlist.item>
+                    {{-- <flux:navlist.item icon="user" :href="route('cliente.index')" :current="request()->routeIs('cliente.index')" wire:navigate>{{ __('Cliente') }}</flux:navlist.item> --}}
                     <flux:navlist.item icon="shopping-bag" :href="route('producto.index')" :current="request()->routeIs('producto.index')" wire:navigate>{{ __('Productos') }}</flux:navlist.item>
                     <flux:navlist.item icon="globe-europe-africa" :href="route('proveedor.index')" :current="request()->routeIs('proveedor.index')" wire:navigate>{{ __('Proveedores') }}</flux:navlist.item>
-                    <flux:navlist.item icon="shopping-cart" :href="route('bobina.index')" :current="request()->routeIs('bobina.index')" wire:navigate>{{ __('Bobinas') }}</flux:navlist.item>
+                    {{-- <flux:navlist.item icon="shopping-cart" :href="route('bobina.index')" :current="request()->routeIs('bobina.index')" wire:navigate>{{ __('Bobinas') }}</flux:navlist.item> --}}
+                    <flux:navlist.item icon="banknotes" :href="route('pago.index')" :current="request()->routeIs('pago.index')" wire:navigate>{{ __('Pagos') }}</flux:navlist.item>
+                    <flux:navlist.item icon="arrow-down-on-square" :href="route('compra.index')" :current="request()->routeIs('compra.index')" wire:navigate>{{ __('Compras') }}</flux:navlist.item>
+                    <flux:navlist.item icon="arrow-up-on-square" :href="route('venta.index')" :current="request()->routeIs('venta.index')" wire:navigate>{{ __('Ventas') }}</flux:navlist.item>
+                    <flux:navlist.item icon="arrow-up-on-square" :href="route('extracto.index')" :current="request()->routeIs('extracto.index')" wire:navigate>{{ __('Extracto') }}</flux:navlist.item>
                 </flux:navlist.group>
             </flux:navlist>
 
@@ -56,7 +60,7 @@
                     <flux:menu.separator />
 
                     <flux:menu.radio.group>
-                        <flux:menu.item :href="route('settings.profile')" icon="cog" wire:navigate>{{ __('Settings') }}</flux:menu.item>
+                        <flux:menu.item :href="route('settings.profile')" icon="cog" wire:navigate>{{ __('Configuración') }}</flux:menu.item>
                     </flux:menu.radio.group>
 
                     <flux:menu.separator />
@@ -64,7 +68,7 @@
                     <form method="POST" action="{{ route('logout') }}" class="w-full">
                         @csrf
                         <flux:menu.item as="button" type="submit" icon="arrow-right-start-on-rectangle" class="w-full">
-                            {{ __('Cerrar Secion') }}
+                            {{ __('Cerrar Sesión') }}
                         </flux:menu.item>
                     </form>
                 </flux:menu>
@@ -106,7 +110,7 @@
                     <flux:menu.separator />
 
                     <flux:menu.radio.group>
-                        <flux:menu.item :href="route('settings.profile')" icon="cog" wire:navigate>{{ __('Settings') }}</flux:menu.item>
+                        <flux:menu.item :href="route('settings.profile')" icon="cog" wire:navigate>{{ __('Configuración') }}</flux:menu.item>
                     </flux:menu.radio.group>
 
                     <flux:menu.separator />

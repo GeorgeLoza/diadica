@@ -15,6 +15,7 @@ class ProductoEdit extends Component
     public $descripcion;
     public $unidad_medida;
     public $categoria;
+    
     #[On('productoEdit')]
     public function editProducto($id)
     {

@@ -24,10 +24,29 @@ class User extends Authenticatable
         'rol',
         'estado',
         'password',
+        'empresa',
+        'razon_social',
+        'nit',
     ];
     public function informacionUsuario()
     {
         return $this->hasOne(InformacionUsuario::class);
+    }
+    public function contactos()
+    {
+        return $this->hasMany(Contacto_usuario::class);
+    }
+    public function ubicaciones()
+    {
+        return $this->hasMany(Ubicaciones_usuario::class);
+    }
+    public function pagosRealizados()
+    {
+        return $this->hasMany(Pago::class, 'trabajador_id');
+    }
+    public function pagosRecibidos()
+    {
+        return $this->hasMany(Pago::class, 'cliente_id');
     }
     /**
      * The attributes that should be hidden for serialization.
